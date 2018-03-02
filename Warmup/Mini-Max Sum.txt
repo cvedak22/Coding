@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+
+static void miniMaxSum(int[] arr)
+{
+    long sum = 0;
+    for(int i=0;i< 5;i++)
+        {
+         sum = sum + arr[i];
+        }
+        Console.WriteLine("{0} {1}",sum-arr.Max(),sum-arr.Min());
+    
+}
+
+static void Main(String[] args) 
+        {
+            string[] arr_temp = Console.ReadLine().Split(' ');
+            int[] arr = Array.ConvertAll(arr_temp,Int32.Parse);
+            miniMaxSum(arr);
+        }
+}
