@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class Solution {
+static void plusMinus(int[] arr)
+{
+        int positivenum = 0;
+        int negativenum = 0;
+        int zero = 0;
+        for(int i=0; i<arr.Length; i++)
+        {
+            
+            if(arr[i]>0) ++positivenum;
+            else if (arr[i]<0) ++negativenum;
+            else ++zero;
+        }
+        Console.WriteLine((double)positivenum/arr.Length);
+        Console.WriteLine((double)negativenum/arr.Length);
+        Console.WriteLine((double)zero/arr.Length);
+
+        }
+            
+        
+        static void Main(String[] args) {
+        int n = Convert.ToInt32(Console.ReadLine());
+        string[] arr_temp = Console.ReadLine().Split(' ');
+        int[] arr = Array.ConvertAll(arr_temp,Int32.Parse);
+        plusMinus(arr);
+    }
+}
