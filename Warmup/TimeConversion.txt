@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+
+    static string timeConversion(string s) {
+        var timeFormat = s.Substring(8);
+        var hourComp = s.Substring(0,2);
+        var remHourComp = s.Substring(2,6);
+        if(timeFormat == "AM" && hourComp == "12")
+        {
+            hourComp= "00";
+        }
+        else if (timeFormat == "PM")
+        {
+            var numHourComp = int.Parse(hourComp);
+            if(numHourComp != 12)
+            {
+                hourComp=Convert.ToString(12+numHourComp);
+            }
+        }
+        return (hourComp+remHourComp);
+        
+        
+    }
+
+    static void Main(String[] args) {
+        string s = Console.ReadLine();
+        string result = timeConversion(s);
+        Console.WriteLine(result);
+    }
+}
